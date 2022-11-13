@@ -17,7 +17,7 @@ const main = async()=> {
     await secondWaveTxn.wait();
     await waveContract.getTotalWave();
 
-    await waveContract.printAdd();
+    await waveContract.returnArray();
 
 };
 const runMain = async() => {

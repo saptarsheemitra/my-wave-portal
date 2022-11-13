@@ -4,14 +4,14 @@ import "hardhat/console.sol";
 
 contract WavePortal {
     uint256 totalWaves;
-    address[10] user;
+    address[] user;
 
     constructor() {
         console.log("Hello World this is Saptarshee");
     }
 
     function wave() public {
-        user[totalWaves] = msg.sender;
+        user.push(msg.sender);
         totalWaves += 1;
         console.log("%s has waved!", msg.sender);
     }
@@ -21,9 +21,12 @@ contract WavePortal {
         return totalWaves;
     }
 
-    function printAdd() public payable returns (address){  
-        address x = user[totalWaves];
-        console.log("Test");
+    function returnArray() public payable returns (address){  
+        address x = user[0];
+        for(uint256 i=0;i<2;i++){
+        console.log(user[i]);
+
+        }
         return x;  
   }  
 }
